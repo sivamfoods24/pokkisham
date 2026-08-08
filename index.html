@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokkisham | Cold Pressed Oil Mill & Grocery Store</title>
+  <meta name="description" content="100% natural, chemical-free wooden cold pressed oils, organic millets, heritage black rice, dry fruits and authentic spices directly from our mill in Trichy, Tamil Nadu.">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Supabase Auth JS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-badges">
+        <div class="top-badge-item">
+          <i data-lucide="leaf"></i>
+          <span>100% Natural & Pure</span>
+        </div>
+        <div class="top-badge-item">
+          <i data-lucide="droplet"></i>
+          <span>Cold Pressed Oils</span>
+        </div>
+        <div class="top-badge-item">
+          <i data-lucide="shield-check"></i>
+          <span>Chemical Free</span>
+        </div>
+        <div class="top-badge-item">
+          <i data-lucide="award"></i>
+          <span>Traditional Quality</span>
+        </div>
+      </div>
+      <div class="top-bar-social">
+        <span>Follow Us:</span>
+        <a href="#" class="social-icon-link" aria-label="Facebook"><i data-lucide="share-2"></i></a>
+        <a href="#" class="social-icon-link" aria-label="Instagram"><i data-lucide="camera"></i></a>
+        <a href="https://wa.me/919047477499" target="_blank" class="social-icon-link" aria-label="WhatsApp"><i data-lucide="phone-call"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-wrapper">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <img src="assets/images/logo.jpg" alt="Pokkisham Official Logo" class="header-logo-img" />
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li class="nav-item-dropdown">
+            <a href="#bestSellersSection" class="nav-link">Shop <i data-lucide="chevron-down" style="width: 14px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('oils')">Cold Pressed Oils</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('millets')">Organic Millets</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('rice')">Heritage Rice</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('nuts')">Nuts & Dry Fruits</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('spices')">Podi & Spices</a>
+            </div>
+          </li>
+          <li class="nav-item-dropdown">
+            <a href="#categories" class="nav-link">Categories <i data-lucide="chevron-down" style="width: 14px;"></i></a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('oils')">Cold Pressed Oils</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('millets')">Millets</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('rice')">Rice Varieties</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('nuts')">Nuts & Dry Fruits</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('spices')">Podi & Spices</a>
+              <a href="#" class="dropdown-item" onclick="filterProductsByCategory('grocery')">Grocery Items</a>
+            </div>
+          </li>
+          <li><a href="#whyChoose" class="nav-link">Benefits</a></li>
+          <li><a href="#" class="nav-link" onclick="openModal('trackingModal')">Track Order</a></li>
+          <li><a href="#footer" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Icons -->
+      <div class="header-actions">
+        <button class="action-btn" onclick="openModal('searchModal')" title="Search Products">
+          <i data-lucide="search"></i>
+        </button>
+        <button class="action-btn" id="headerUserBtn" onclick="openModal('accountModal')" title="My Account">
+          <span id="headerUserIconSpan"><i data-lucide="user"></i></span>
+        </button>
+        <button class="action-btn" onclick="openCartDrawer()" title="Shopping Cart">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Slider Section -->
+  <section class="hero-section" id="heroSliderSection">
+    <div class="hero-slider-container">
+      <div class="hero-slider-track" id="heroSliderTrack">
+        
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="container hero-wrapper">
+            <div class="hero-content">
+              <div class="hero-tag">
+                <i data-lucide="sparkles" style="width: 14px;"></i> 100% Traditional & Organic
+              </div>
+              <h1 class="hero-title">
+                Pure by Nature. <span>Good for Life.</span>
+              </h1>
+              <p class="hero-desc">
+                Cold Pressed Oils, Millets, Nuts & Natural Groceries for a Healthy Lifestyle.
+              </p>
+              <div class="hero-cta-group">
+                <a href="#bestSellersSection" class="btn btn-primary">
+                  <i data-lucide="shopping-cart" style="width: 18px;"></i> SHOP NOW
+                </a>
+                <a href="#categories" class="btn btn-outline">
+                  OUR PRODUCTS
+                </a>
+              </div>
+            </div>
+            <div class="hero-image-box">
+              <img src="assets/images/hero_banner.jpg" alt="Pokkisham Cold Pressed Oils & Groceries" class="hero-img-main" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="container hero-wrapper">
+            <div class="hero-content">
+              <div class="hero-tag">
+                <i data-lucide="droplet" style="width: 14px;"></i> Wooden Cold Pressed Oils
+              </div>
+              <h1 class="hero-title">
+                100% Pure <span>Cold Pressed Oils</span>
+              </h1>
+              <p class="hero-desc">
+                Extracted using traditional wooden chekku without heat or chemical refining to retain natural nutrients and rich aroma.
+              </p>
+              <div class="hero-cta-group">
+                <a href="#bestSellersSection" onclick="filterProductsByCategory('oils')" class="btn btn-primary">
+                  <i data-lucide="droplets" style="width: 18px;"></i> EXPLORE OILS
+                </a>
+                <a href="#whyChoose" class="btn btn-outline">
+                  LEARN BENEFITS
+                </a>
+              </div>
+            </div>
+            <div class="hero-image-box">
+              <img src="assets/images/gingelly_oil.jpg" alt="Wooden Cold Pressed Gingelly Oil" class="hero-img-main" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <div class="container hero-wrapper">
+            <div class="hero-content">
+              <div class="hero-tag">
+                <i data-lucide="wheat" style="width: 14px;"></i> Heritage & Organic Millets
+              </div>
+              <h1 class="hero-title">
+                Native South Indian <span>Organics & Millets</span>
+              </h1>
+              <p class="hero-desc">
+                Direct from farms to your kitchen — Black Kavuni Rice, Foxtail Thinai, Badam Nuts, and Authentic Spices.
+              </p>
+              <div class="hero-cta-group">
+                <a href="#bestSellersSection" onclick="filterProductsByCategory('rice')" class="btn btn-primary">
+                  <i data-lucide="wheat" style="width: 18px;"></i> SHOP RICE & MILLETS
+                </a>
+                <a href="#categories" class="btn btn-outline">
+                  ALL CATEGORIES
+                </a>
+              </div>
+            </div>
+            <div class="hero-image-box">
+              <img src="assets/images/why_choose_banner.jpg" alt="Heritage South Indian Organics" class="hero-img-main" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Navigation Arrows -->
+      <button class="hero-nav-arrow prev" id="heroPrevBtn" aria-label="Previous Slide">
+        <i data-lucide="chevron-left"></i>
+      </button>
+      <button class="hero-nav-arrow next" id="heroNextBtn" aria-label="Next Slide">
+        <i data-lucide="chevron-right"></i>
+      </button>
+
+      <!-- Slider Indicator Dots -->
+      <div class="hero-dots-wrap" id="heroDotsWrap">
+        <button class="hero-dot active" data-slide="0" aria-label="Go to Slide 1"></button>
+        <button class="hero-dot" data-slide="1" aria-label="Go to Slide 2"></button>
+        <button class="hero-dot" data-slide="2" aria-label="Go to Slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Grid Section -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="category-grid" id="categoryGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Trust Highlight Bar -->
+  <section class="feature-trust-bar">
+    <div class="container">
+      <div class="feature-trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-box"><i data-lucide="leaf"></i></div>
+          <div>
+            <div class="trust-title">100% Natural</div>
+            <div class="trust-sub">No Chemicals, No Additives</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box"><i data-lucide="droplet"></i></div>
+          <div>
+            <div class="trust-title">Cold Pressed</div>
+            <div class="trust-sub">Retains Natural Nutrients</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box"><i data-lucide="hammer"></i></div>
+          <div>
+            <div class="trust-title">Traditional Process</div>
+            <div class="trust-sub">Wooden Cold Pressed</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box"><i data-lucide="truck"></i></div>
+          <div>
+            <div class="trust-title">Direct from Mill</div>
+            <div class="trust-sub">Farm to Home Freshness</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-box"><i data-lucide="shield"></i></div>
+          <div>
+            <div class="trust-title">Secure Packaging</div>
+            <div class="trust-sub">Safe & Hygienic</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers / Products Section -->
+  <section class="products-section" id="bestSellersSection">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">BEST SELLERS</h2>
+        <div class="section-ornament">
+          <span class="ornament-line"></span>
+          <i data-lucide="flower2" style="width: 18px;"></i>
+          <span class="ornament-line"></span>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="product-filter-tabs">
+        <button class="filter-tab active" data-category="all" onclick="filterProductsByCategory('all')">All Products</button>
+        <button class="filter-tab" data-category="oils" onclick="filterProductsByCategory('oils')">Cold Pressed Oils</button>
+        <button class="filter-tab" data-category="millets" onclick="filterProductsByCategory('millets')">Millets</button>
+        <button class="filter-tab" data-category="rice" onclick="filterProductsByCategory('rice')">Heritage Rice</button>
+        <button class="filter-tab" data-category="nuts" onclick="filterProductsByCategory('nuts')">Nuts & Dry Fruits</button>
+        <button class="filter-tab" data-category="spices" onclick="filterProductsByCategory('spices')">Podi & Spices</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Pokkisham Section -->
+  <section class="why-choose-section" id="whyChoose">
+    <div class="container">
+      <div class="why-choose-grid">
+        <div class="why-choose-image-box">
+          <img src="assets/images/why_choose_banner.jpg" alt="Traditional Chekku Mill Process" class="why-choose-img" />
+        </div>
+
+        <div class="why-choose-content">
+          <h2>WHY CHOOSE POKKISHAM?</h2>
+          <p>
+            We are a traditional, cold pressed oil mill, and grocery store, committed to providing 100% natural, chemical-free and premium quality products for a healthy lifestyle.
+          </p>
+
+          <div class="why-badges-grid">
+            <div class="why-badge-item">
+              <div class="why-badge-icon">🌿</div>
+              <div class="why-badge-label">Chemical Free</div>
+            </div>
+            <div class="why-badge-item">
+              <div class="why-badge-icon">🌾</div>
+              <div class="why-badge-label">Unpolished & Natural</div>
+            </div>
+            <div class="why-badge-item">
+              <div class="why-badge-icon">🚫</div>
+              <div class="why-badge-label">No Preservatives</div>
+            </div>
+            <div class="why-badge-item">
+              <div class="why-badge-icon">⭐</div>
+              <div class="why-badge-label">Premium Quality</div>
+            </div>
+          </div>
+
+          <a href="#about" class="btn btn-primary" onclick="openModal('aboutModal')">
+            KNOW MORE ABOUT US
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+        <div class="section-ornament">
+          <span class="ornament-line"></span>
+          <i data-lucide="quote" style="width: 18px;"></i>
+          <span class="ornament-line"></span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter Banner -->
+  <section class="stats-banner-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">5000+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Quality Products</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years of Trust</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Natural Products</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter & Delivery Bar -->
+  <section class="newsletter-bar">
+    <div class="container newsletter-flex">
+      <div class="newsletter-left">
+        <h3>Subscribe to our Newsletter</h3>
+        <p>Get latest updates on offers and new products delivered to your inbox.</p>
+      </div>
+
+      <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed to Newsletter successfully!'); this.reset();">
+        <input type="email" placeholder="Enter your email address..." class="newsletter-input" required />
+        <button type="submit" class="newsletter-btn">SUBSCRIBE</button>
+      </form>
+
+      <div class="delivery-badges">
+        <div class="delivery-badge-item">
+          <i data-lucide="package-check"></i>
+          <div>
+            <strong>Secure Packaging</strong><br/>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Safe & Hygienic Packaging</span>
+          </div>
+        </div>
+        <div class="delivery-badge-item">
+          <i data-lucide="truck"></i>
+          <div>
+            <strong>Fast Delivery</strong><br/>
+            <span style="font-size: 0.78rem; opacity: 0.85;">Across Tamil Nadu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer class="main-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div>
+          <div class="brand-logo" style="margin-bottom: 14px;">
+            <img src="assets/images/logo.jpg" alt="Pokkisham Official Logo" class="footer-logo-img" />
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+            Pure Oils. Healthy Life.<br/>
+            Traditional wooden cold pressed oil mill dedicated to 100% natural, chemical-free organic groceries.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">QUICK LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about" onclick="openModal('aboutModal')">About Us</a></li>
+            <li><a href="#bestSellersSection">Shop Catalog</a></li>
+            <li><a href="#categories">Product Categories</a></li>
+            <li><a href="#" onclick="openModal('trackingModal')">Order Tracking</a></li>
+            <li><a href="#whyChoose">Health Benefits</a></li>
+            <li><a href="#" onclick="adminManager.openAdminDashboard()" style="color: var(--accent); font-weight: 700;">🔑 Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Product Categories -->
+        <div>
+          <h4 class="footer-col-title">PRODUCT CATEGORIES</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="filterProductsByCategory('oils')">Cold Pressed Oils</a></li>
+            <li><a href="#" onclick="filterProductsByCategory('millets')">Organic Millets</a></li>
+            <li><a href="#" onclick="filterProductsByCategory('rice')">Rice Varieties</a></li>
+            <li><a href="#" onclick="filterProductsByCategory('nuts')">Nuts & Dry Fruits</a></li>
+            <li><a href="#" onclick="filterProductsByCategory('spices')">Podi & Spices</a></li>
+            <li><a href="#" onclick="filterProductsByCategory('grocery')">Grocery Items</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Customer Service -->
+        <div>
+          <h4 class="footer-col-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="openModal('accountModal')">My Account</a></li>
+            <li><a href="#" onclick="openModal('trackingModal')">Order Tracking</a></li>
+            <li><a href="#" onclick="showToast('Shipping Policy: Free delivery on orders above ₹999 across Tamil Nadu.')">Shipping Policy</a></li>
+            <li><a href="#" onclick="showToast('Return Policy: 7-day easy return for damaged items.')">Return Policy</a></li>
+            <li><a href="#" onclick="showToast('Terms & Conditions applied.')">Terms & Conditions</a></li>
+            <li><a href="#" onclick="showToast('Privacy Policy: Your data is 100% protected.')">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Contact Us -->
+        <div>
+          <h4 class="footer-col-title">CONTACT US</h4>
+          <ul class="contact-list">
+            <li>
+              <i data-lucide="phone"></i>
+              <span>+91 90474 77499</span>
+            </li>
+            <li>
+              <i data-lucide="mail"></i>
+              <span>pokkishamstore@gmail.com</span>
+            </li>
+            <li>
+              <i data-lucide="map-pin"></i>
+              <span>Trichy, Tamil Nadu, India</span>
+            </li>
+          </ul>
+          <div style="display: flex; gap: 10px; margin-top: 14px;">
+            <a href="#" class="social-icon-link" style="background: var(--primary); color: white;" aria-label="Facebook"><i data-lucide="share-2" style="width: 16px;"></i></a>
+            <a href="#" class="social-icon-link" style="background: var(--primary); color: white;" aria-label="Instagram"><i data-lucide="camera" style="width: 16px;"></i></a>
+            <a href="https://wa.me/919047477499" target="_blank" class="social-icon-link" style="background: #25D366; color: white;" aria-label="WhatsApp"><i data-lucide="phone-call" style="width: 16px;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-footer">
+        © 2025 Pokkisham Cold Pressed Oil Mill & Grocery Store. All Rights Reserved. &nbsp;|&nbsp; <a href="#" onclick="adminManager.openAdminDashboard()" style="color: var(--accent-hover); font-weight: 600; text-decoration: underline;">🔑 Admin Portal</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer">
+      <div class="drawer-header">
+        <span class="drawer-title">Shopping Cart</span>
+        <button class="close-drawer-btn" onclick="closeCartDrawer()">&times;</button>
+      </div>
+
+      <div class="free-shipping-progress">
+        <div id="freeShippingText">Add <strong>₹999</strong> more to unlock <strong>FREE Delivery!</strong></div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="freeShippingProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-container" id="cartDrawerItems">
+        <!-- Rendered dynamically by cartManager -->
+      </div>
+
+      <div class="drawer-footer">
+        <div class="coupon-box">
+          <input type="text" id="couponInput" placeholder="Promo code (e.g. POKKISHAM10)" class="coupon-input" />
+          <button class="apply-coupon-btn" onclick="cartManager.applyCoupon(document.getElementById('couponInput').value)">Apply</button>
+        </div>
+
+        <div class="cart-summary-row">
+          <span>Subtotal:</span>
+          <span id="cartSubtotal">₹0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Discount:</span>
+          <span id="cartDiscount" style="color: var(--primary); font-weight: 700;">-₹0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Shipping:</span>
+          <span id="cartShipping">₹0.00</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>Total Payable:</span>
+          <span id="cartTotal">₹0.00</span>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" onclick="openCheckout()">
+          PROCEED TO CHECKOUT
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeModal('quickViewModal')">&times;</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-content" style="max-width: 500px;">
+      <button class="modal-close-btn" onclick="closeModal('searchModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--primary); margin-bottom: 16px;">Search Pokkisham Products</h3>
+      <input type="text" id="searchInput" placeholder="Search Gingelly Oil, Kavuni Rice, Badam..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 16px;" />
+      <div id="searchResults" style="max-height: 300px; overflow-y: auto;">
+        <p style="font-size: 0.88rem; color: var(--text-muted); text-align: center; padding: 20px;">Type to start searching...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Account Auth Modal (Supabase Auth - Email & Password Only) -->
+  <div class="modal-overlay" id="accountModal">
+    <div class="modal-content" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeModal('accountModal')">&times;</button>
+      
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px; text-align: center;" id="authModalTitle">Customer Sign In</h3>
+      
+      <!-- Tab Controls -->
+      <div class="auth-tabs-wrap">
+        <button class="auth-tab-btn active" id="tabBtnLogin" onclick="switchAuthTab('login')">SIGN IN</button>
+        <button class="auth-tab-btn" id="tabBtnRegister" onclick="switchAuthTab('register')">CREATE ACCOUNT</button>
+      </div>
+
+      <!-- 1. Login Form -->
+      <form id="authLoginForm" onsubmit="event.preventDefault(); authManager.login(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value);">
+        <div style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Email Address</label>
+          <input type="email" id="loginEmail" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="customer@example.com" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <label style="font-size: 0.85rem; font-weight: 600;">Password</label>
+            <span class="auth-link" style="font-size: 0.8rem;" onclick="switchAuthTab('forgot')">Forgot password?</span>
+          </div>
+          <input type="password" id="loginPassword" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 14px;">SIGN IN WITH EMAIL</button>
+
+        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
+          New customer? <span class="auth-link" onclick="switchAuthTab('register')">Create an Account</span>
+        </p>
+      </form>
+
+      <!-- 2. Registration Form -->
+      <form id="authRegisterForm" style="display: none;" onsubmit="event.preventDefault(); authManager.register(document.getElementById('regName').value, document.getElementById('regEmail').value, document.getElementById('regPassword').value, document.getElementById('regConfirmPassword').value);">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Full Name</label>
+          <input type="text" id="regName" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="Priya Sundaram" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Email Address</label>
+          <input type="email" id="regEmail" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="customer@example.com" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Password</label>
+          <input type="password" id="regPassword" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="••••••••" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Confirm Password</label>
+          <input type="password" id="regConfirmPassword" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">CREATE ACCOUNT</button>
+
+        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
+          Already have an account? <span class="auth-link" onclick="switchAuthTab('login')">Sign In</span>
+        </p>
+      </form>
+
+      <!-- 3. Forgot Password Form -->
+      <form id="authForgotForm" style="display: none;" onsubmit="event.preventDefault(); authManager.forgotPassword(document.getElementById('forgotEmail').value);">
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px; text-align: center;">
+          Enter your registered email address below to receive password reset instructions.
+        </p>
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Email Address</label>
+          <input type="email" id="forgotEmail" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="customer@example.com" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">SEND RESET LINK</button>
+
+        <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 16px;">
+          <span class="auth-link" onclick="switchAuthTab('login')">← Back to Sign In</span>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Customer Dashboard Modal -->
+  <div class="modal-overlay" id="accountDashboardModal">
+    <div class="modal-content" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeModal('accountDashboardModal')">&times;</button>
+      <div id="dashboardContent"></div>
+    </div>
+  </div>
+
+  <!-- Order Tracking Modal -->
+  <div class="modal-overlay" id="trackingModal">
+    <div class="modal-content" style="max-width: 480px;">
+      <button class="modal-close-btn" onclick="closeModal('trackingModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Track Your Order</h3>
+      <form onsubmit="trackOrder(event)">
+        <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 6px;">Order ID (e.g. POK-849201)</label>
+        <input type="text" id="trackOrderId" required placeholder="Enter Order ID" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 14px;" />
+        <button type="submit" class="btn btn-primary" style="width: 100%;">TRACK ORDER</button>
+      </form>
+      <div id="trackingResult"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Wizard Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-content" style="max-width: 550px;">
+      <button class="modal-close-btn" onclick="closeModal('checkoutModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Checkout - Pokkisham Express Delivery</h3>
+      
+      <form onsubmit="processCheckout(event)">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Full Name</label>
+            <input type="text" id="checkoutName" required style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="Priya Sundaram" />
+          </div>
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Phone Number</label>
+            <input type="tel" id="checkoutPhone" required style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="+91 98765 43210" />
+          </div>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Delivery Address (Tamil Nadu & India)</label>
+          <textarea id="checkoutAddress" required rows="2" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="Door No, Street name, City, Pincode"></textarea>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 6px;">Select Payment Method:</label>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;" onchange="togglePaymentDetails()">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="radio" name="paymentMethod" value="UPI / GPay / PhonePe" checked />
+              <span>📱 Google Pay / PhonePe / Paytm UPI</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="radio" name="paymentMethod" value="Cash on Delivery" />
+              <span>💵 Cash on Delivery (COD)</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="radio" name="paymentMethod" value="NetBanking / Debit Card" />
+              <span>💳 Net Banking / Credit & Debit Card</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- UPI & QR Code Box -->
+        <div id="checkoutUpiBox" style="background: var(--bg-white); border: 2px solid var(--accent); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 16px; text-align: center;">
+          <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem; margin-bottom: 10px;">⚡ Instant One-Click App Payment or Scan QR</div>
+
+          <!-- Quick Launch App Buttons -->
+          <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap;">
+            <button type="button" class="btn" onclick="openUpiApp('gpay')" style="flex: 1; min-width: 110px; background: #4285F4; color: white; border: none; font-size: 0.82rem; font-weight: 700; padding: 10px 8px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: var(--shadow-sm);">
+              <span>🔵 Google Pay</span>
+            </button>
+            <button type="button" class="btn" onclick="openUpiApp('phonepe')" style="flex: 1; min-width: 110px; background: #5f259f; color: white; border: none; font-size: 0.82rem; font-weight: 700; padding: 10px 8px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: var(--shadow-sm);">
+              <span>🟣 PhonePe</span>
+            </button>
+            <button type="button" class="btn" onclick="openUpiApp('paytm')" style="flex: 1; min-width: 110px; background: #00baf2; color: white; border: none; font-size: 0.82rem; font-weight: 700; padding: 10px 8px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: var(--shadow-sm);">
+              <span>🔷 Paytm</span>
+            </button>
+            <button type="button" class="btn" onclick="openUpiApp('any')" style="flex: 1; min-width: 110px; background: var(--primary); color: white; border: none; font-size: 0.82rem; font-weight: 700; padding: 10px 8px; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: var(--shadow-sm);">
+              <span>📲 All UPI Apps (iOS / Android)</span>
+            </button>
+          </div>
+          
+          <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 10px;">
+            <img id="checkoutQrImage" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=9047477499@ybl&pn=Pokkisham%20Store" alt="Store QR Code" style="width: 170px; height: 170px; border-radius: 8px; border: 2px solid var(--primary); display: block; margin: 0 auto; object-fit: contain; background: white; padding: 6px; box-shadow: var(--shadow-sm);" />
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
+            <span style="font-weight: 700; color: var(--primary); font-size: 0.95rem;" id="checkoutUpiDisplay">9047477499@ybl</span>
+            <button type="button" class="btn btn-outline" style="padding: 4px 10px; font-size: 0.75rem; border-color: var(--primary); color: var(--primary);" onclick="copyUpiId()">
+              📋 Copy UPI ID
+            </button>
+          </div>
+
+          <div style="text-align: left; background: var(--bg-cream); padding: 10px 12px; border-radius: var(--radius-sm); border: 1px dashed var(--primary);">
+            <label style="font-size: 0.8rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 4px;">Enter Payment Transaction ID / UTR No (after pay):</label>
+            <input type="text" id="checkoutTransactionId" placeholder="e.g. 123456789012" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.85rem;" />
+          </div>
+        </div>
+
+        <div style="background: var(--bg-cream); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 600;">Total Payable Amount:</span>
+          <span style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--primary);" id="checkoutPayableTotal">₹0.00</span>
+        </div>
+
+        <button type="button" class="btn btn-gold" style="width: 100%; margin-bottom: 10px;" onclick="processCheckout(event)">
+          PLACE ORDER NOW (PAY VIA QR / UPI / COD)
+        </button>
+
+        <button type="button" class="btn" style="width: 100%; background: #25D366; color: white; border: none; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px;" onclick="orderViaWhatsApp(event)">
+          <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+          <span>ORDER VIA WHATSAPP (INSTANT DIRECT MESSAGE)</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-content" style="max-width: 480px;">
+      <button class="modal-close-btn" onclick="closeModal('orderSuccessModal')">&times;</button>
+      <div id="successOrderDetails"></div>
+      <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="closeModal('orderSuccessModal')">
+        CONTINUE SHOPPING
+      </button>
+    </div>
+  </div>
+
+  <!-- About Us Details Modal -->
+  <div class="modal-overlay" id="aboutModal">
+    <div class="modal-content" style="max-width: 580px;">
+      <button class="modal-close-btn" onclick="closeModal('aboutModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); margin-bottom: 12px;">About Pokkisham Oil Mill</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">
+        Pokkisham Cold Pressed Oil Mill & Grocery Store was founded in Trichy, Tamil Nadu with a clear vision: to bring back authentic, unrefined, traditional wooden cold pressed oils (Chekku Ennai) and chemical-free organic farm produce to modern households.
+      </p>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">
+        Our oils are extracted slowly using traditional Vagai wood chekku without heating, refining, or bleaching. This preserves vital nutrients, natural aroma, and rich antioxidants essential for heart health and natural longevity.
+      </p>
+      <div style="background: var(--bg-cream); padding: 14px; border-radius: var(--radius-sm); border-left: 4px solid var(--accent); font-size: 0.85rem;">
+        <strong>Our Guarantee:</strong> 100% Pure, Zero Chemicals, Zero Adulteration, Direct Farm-to-Home Freshness.
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Chat Button -->
+  <a href="https://wa.me/919047477499" target="_blank" class="whatsapp-float-btn" title="Chat on WhatsApp (+91 90474 77499)">
+    <i data-lucide="message-circle" style="width: 28px; height: 28px;"></i>
+  </a>
+
+  <!-- Admin Login Modal -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal-content" style="max-width: 420px;">
+      <button class="modal-close-btn" onclick="closeModal('adminLoginModal')">&times;</button>
+      <div style="text-align: center; margin-bottom: 18px;">
+        <img src="assets/images/logo.jpg" alt="Pokkisham Official Logo" style="width: 140px; height: auto; max-height: 140px; border-radius: 12px; border: 2px solid var(--accent); box-shadow: var(--shadow-md); object-fit: contain; margin: 0 auto 14px; display: block; background: white; padding: 6px;" />
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 2px;">Pokkisham Store Admin Portal</h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted);">Sign in with store manager credentials</p>
+      </div>
+
+      <form onsubmit="event.preventDefault(); adminManager.login(document.getElementById('adminEmail').value, document.getElementById('adminPassword').value);">
+        <div style="margin-bottom: 14px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Admin Email</label>
+          <input type="text" id="adminEmail" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="admin@pokkisham.com" value="admin@pokkisham.com" />
+        </div>
+        <div style="margin-bottom: 20px;">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Admin Passcode</label>
+          <input type="password" id="adminPassword" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" placeholder="admin123" value="admin123" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">ACCESS ADMIN DASHBOARD</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Full Screen Standalone Admin Dashboard Modal -->
+  <div class="modal-overlay" id="adminDashboardModal">
+    <div class="modal-content admin-fullscreen-container">
+      
+      <!-- Fullscreen Top Bar -->
+      <div class="admin-fullscreen-topbar">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <img src="assets/images/logo.jpg" alt="Pokkisham Logo" style="height: 38px; background: white; border-radius: 4px; padding: 2px;" />
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--bg-white); line-height: 1.1;">Pokkisham Store Control Center</h3>
+            <span style="font-size: 0.78rem; color: var(--accent);">Real-time Full Site CMS & Admin Dashboard</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="btn btn-outline" style="padding: 6px 14px; font-size: 0.8rem; border-color: var(--accent); color: var(--accent);" onclick="closeModal('adminDashboardModal')">
+            🌐 View Public Site
+          </button>
+          <button class="btn btn-gold" style="padding: 6px 14px; font-size: 0.8rem;" onclick="adminManager.logout()">
+            🔐 Logout Admin
+          </button>
+        </div>
+      </div>
+
+      <!-- Fullscreen Layout with Sidebar & Main Content Viewport -->
+      <div class="admin-fullscreen-layout">
+        
+        <!-- Left Sidebar Navigation -->
+        <nav class="admin-sidebar-nav">
+          <button class="auth-tab-btn active" id="adminTabBtn-overview" onclick="switchAdminTab('overview')">📊 Overview Stats</button>
+          <button class="auth-tab-btn" id="adminTabBtn-products" onclick="switchAdminTab('products')">📦 Product Catalog</button>
+          <button class="auth-tab-btn" id="adminTabBtn-categories" onclick="switchAdminTab('categories')">📂 Categories CMS</button>
+          <button class="auth-tab-btn" id="adminTabBtn-orders" onclick="switchAdminTab('orders')">🚚 Orders Fulfillment</button>
+          <button class="auth-tab-btn" id="adminTabBtn-testimonials" onclick="switchAdminTab('testimonials')">⭐ Customer Reviews</button>
+          <button class="auth-tab-btn" id="adminTabBtn-customers" onclick="switchAdminTab('customers')">👥 Customer Accounts</button>
+          <button class="auth-tab-btn" id="adminTabBtn-settings" onclick="switchAdminTab('settings')">⚙️ Store Contact Info</button>
+        </nav>
+
+        <!-- Main Content Viewport -->
+        <main class="admin-main-viewport">
+          
+          <!-- 1. Overview Tab -->
+          <div id="adminTabContent-overview">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Dashboard Overview & Analytics</h3>
+            <div class="admin-stats-grid">
+              <div class="admin-stat-card">
+                <div class="admin-stat-val" id="adminStatRevenue">₹0.00</div>
+                <div class="admin-stat-lbl">Total Store Revenue</div>
+              </div>
+              <div class="admin-stat-card">
+                <div class="admin-stat-val" id="adminStatOrders">0</div>
+                <div class="admin-stat-lbl">Orders Placed</div>
+              </div>
+              <div class="admin-stat-card">
+                <div class="admin-stat-val" id="adminStatProducts">0</div>
+                <div class="admin-stat-lbl">Active Products</div>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-white); padding: 24px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary); margin-bottom: 14px;">Quick Admin Actions</h4>
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="adminManager.openAddProductModal()">➕ Add New Product</button>
+                <button class="btn btn-gold" onclick="switchAdminTab('orders')">📦 Manage Customer Orders</button>
+                <button class="btn btn-outline" onclick="switchAdminTab('categories')">📂 Manage Categories</button>
+                <button class="btn btn-outline" onclick="switchAdminTab('settings')">⚙️ Edit Store Info</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Products Tab -->
+          <div id="adminTabContent-products" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary);">Store Product Catalog</h3>
+              <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" onclick="adminManager.openAddProductModal()">
+                ➕ Add New Product
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProductsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 3. Orders Tab -->
+          <div id="adminTabContent-orders" style="display: none;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 18px;">Customer Orders Fulfillment</h3>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Ordered Items</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Fulfillment Status</th>
+                  </tr>
+                </thead>
+                <tbody id="adminOrdersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 4. Categories Tab -->
+          <div id="adminTabContent-categories" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary);">Store Categories Management</h3>
+              <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('adminAddCategoryModal')">
+                ➕ Add Category
+              </button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Icon</th>
+                    <th>Category Name</th>
+                    <th>Badge</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminCategoriesTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 5. Testimonials Tab -->
+          <div id="adminTabContent-testimonials" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary);">Customer Testimonials & Reviews</h3>
+              <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('adminAddTestimonialModal')">
+                ➕ Add Review
+              </button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Rating</th>
+                    <th>Review Comment</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminTestimonialsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 6. Customers Tab -->
+          <div id="adminTabContent-customers" style="display: none;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 18px;">Registered Store Customers</h3>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Email Address</th>
+                    <th>Total Orders</th>
+                    <th>Member Since</th>
+                  </tr>
+                </thead>
+                <tbody id="adminCustomersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 7. Settings Tab -->
+          <div id="adminTabContent-settings" style="display: none;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 18px;">Site-wide Store Information & Payment Control</h3>
+            <form onsubmit="event.preventDefault(); adminManager.saveStoreSettings(
+              'Pokkisham',
+              document.getElementById('settingPhone').value,
+              document.getElementById('settingWhatsapp').value,
+              document.getElementById('settingEmail').value,
+              document.getElementById('settingAddress').value,
+              document.getElementById('settingFreeShip').value,
+              document.getElementById('settingUpiId').value,
+              document.getElementById('settingQrCodeImage').value,
+              document.getElementById('settingBankName').value,
+              document.getElementById('settingAccNo').value,
+              document.getElementById('settingIfsc').value
+            );" style="max-width: 680px; background: var(--bg-white); padding: 24px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px;">📞 Store Contact Details</h4>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Store Phone Number</label>
+                  <input type="text" id="settingPhone" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">WhatsApp Link</label>
+                  <input type="text" id="settingWhatsapp" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Store Contact Email</label>
+                <input type="email" id="settingEmail" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Mill / Store Location Address</label>
+                <input type="text" id="settingAddress" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Free Shipping Spend Threshold (₹)</label>
+                <input type="number" id="settingFreeShip" required style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+              </div>
+
+              <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--primary); margin-bottom: 12px; border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-top: 24px;">💳 Store Payment Gateway, UPI Apps & QR Control</h4>
+
+              <div style="background: var(--bg-cream); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 16px; border-left: 4px solid var(--primary);">
+                <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 8px;">Enabled Customer Payment Options on Checkout Page:</label>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; font-size: 0.85rem;">
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="settingEnableUpi" checked disabled />
+                    <span>🔵 Google Pay / PhonePe / Paytm</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="settingEnableCod" checked disabled />
+                    <span>💵 Cash on Delivery (COD)</span>
+                  </label>
+                  <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" id="settingEnableCard" checked disabled />
+                    <span>💳 Cards & NetBanking</span>
+                  </label>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Merchant Primary UPI ID (GPay / PhonePe / Paytm)</label>
+                  <input type="text" id="settingUpiId" required placeholder="9047477499@ybl" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Bank / Receiver Name</label>
+                  <input type="text" id="settingBankName" placeholder="State Bank of India" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+              </div>
+
+              <div style="margin-bottom: 14px; background: var(--bg-cream); padding: 14px; border-radius: var(--radius-sm); border: 1px dashed var(--primary);">
+                <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">
+                  📲 Upload Store QR Code Image (Applies live to Google Pay / PhonePe Scanner):
+                </label>
+                <input type="file" accept="image/*" onchange="adminManager.handleQrImageUpload(event)" style="width: 100%; font-size: 0.85rem; cursor: pointer; margin-bottom: 8px;" />
+                <input type="text" id="settingQrCodeImage" placeholder="Image URL / Base64" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8rem;" />
+                <div style="margin-top: 8px; text-align: center;">
+                  <img id="settingQrPreview" src="" alt="QR Preview" style="max-height: 120px; border-radius: 6px; border: 2px solid var(--primary); object-fit: contain; background: white; padding: 4px;" />
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px;">
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">Account Number</label>
+                  <input type="text" id="settingAccNo" placeholder="39485720194" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+                <div>
+                  <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">IFSC Code</label>
+                  <input type="text" id="settingIfsc" placeholder="SBIN0004819" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%;">SAVE ALL SETTINGS & PAYMENT METHODS LIVE</button>
+            </form>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Add Product Modal -->
+  <div class="modal-overlay" id="adminAddProductModal">
+    <div class="modal-content" style="max-width: 500px;">
+      <button class="modal-close-btn" onclick="closeModal('adminAddProductModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Add New Product to Store</h3>
+
+      <form onsubmit="event.preventDefault(); adminManager.addProduct(
+        document.getElementById('newProdName').value,
+        document.getElementById('newProdCategory').value,
+        document.getElementById('newProdPrice').value,
+        document.getElementById('newProdOldPrice').value,
+        document.getElementById('newProdUnit').value,
+        document.getElementById('newProdBadge').value,
+        document.getElementById('newProdImage').value,
+        document.getElementById('newProdDesc').value
+      );">
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Product Title</label>
+          <input type="text" id="newProdName" required placeholder="e.g. Wooden Cold Pressed Neem Oil" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Category</label>
+            <select id="newProdCategory" required style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+              <option value="oils">Cold Pressed Oils</option>
+              <option value="millets">Millets</option>
+              <option value="rice">Heritage Rice</option>
+              <option value="nuts">Nuts & Dry Fruits</option>
+              <option value="spices">Podi & Spices</option>
+              <option value="grocery">Grocery Items</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Badge Tag</label>
+            <input type="text" id="newProdBadge" placeholder="e.g. Best Seller / Pure" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Price (₹)</label>
+            <input type="number" id="newProdPrice" step="0.01" required placeholder="350.00" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+          </div>
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Old Price (₹)</label>
+            <input type="number" id="newProdOldPrice" step="0.01" placeholder="390.00" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+          </div>
+          <div>
+            <label style="font-size: 0.82rem; font-weight: 600;">Unit Size</label>
+            <input type="text" id="newProdUnit" required placeholder="1 Litre / 1 Kg" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+          </div>
+        </div>
+
+        <div style="margin-bottom: 14px; background: var(--bg-cream); padding: 14px; border-radius: var(--radius-sm); border: 1px dashed var(--primary);">
+          <label style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">
+            🖼️ Upload Product Image File (Click to browse file):
+          </label>
+          <input type="file" id="newProdFileInput" accept="image/*" onchange="adminManager.handleImageUpload(event)" style="width: 100%; font-size: 0.85rem; cursor: pointer;" />
+          
+          <div id="newProdImagePreviewBox" style="margin-top: 10px; display: none; text-align: center;">
+            <img id="newProdImagePreview" src="" alt="Uploaded Preview" style="max-height: 120px; border-radius: var(--radius-sm); border: 2px solid var(--accent); object-fit: cover;" />
+            <div style="font-size: 0.78rem; color: #164E38; font-weight: 700; margin-top: 4px;">✓ Image Uploaded & Ready</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Or Image URL / Relative Path</label>
+          <input type="text" id="newProdImage" placeholder="assets/images/gingelly_oil.jpg" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Description</label>
+          <textarea id="newProdDesc" rows="2" placeholder="100% natural, traditional wooden cold pressed..." style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">PUBLISH PRODUCT</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Category Modal -->
+  <div class="modal-overlay" id="adminAddCategoryModal">
+    <div class="modal-content" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeModal('adminAddCategoryModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Add New Category</h3>
+      <form onsubmit="event.preventDefault(); adminManager.addCategory(
+        document.getElementById('catName').value,
+        document.getElementById('catBadge').value,
+        document.getElementById('catIcon').value,
+        document.getElementById('catImage').value
+      );">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Category Name</label>
+          <input type="text" id="catName" required placeholder="e.g. Herbal Powders" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Badge Text</label>
+          <input type="text" id="catBadge" placeholder="e.g. 5+ Items" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Emoji Icon</label>
+          <input type="text" id="catIcon" placeholder="🌿" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Image Path</label>
+          <input type="text" id="catImage" placeholder="assets/images/gingelly_oil.jpg" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">CREATE CATEGORY</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Edit Category Modal -->
+  <div class="modal-overlay" id="adminEditCategoryModal">
+    <div class="modal-content" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeModal('adminEditCategoryModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Edit Category Details</h3>
+      <form onsubmit="event.preventDefault(); adminManager.updateCategory(
+        document.getElementById('editCatIndex').value,
+        document.getElementById('editCatName').value,
+        document.getElementById('editCatBadge').value,
+        document.getElementById('editCatIcon').value,
+        document.getElementById('editCatImage').value
+      );">
+        <input type="hidden" id="editCatIndex" />
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Category Name</label>
+          <input type="text" id="editCatName" required style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Badge Text</label>
+          <input type="text" id="editCatBadge" placeholder="e.g. 10+ Oils" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Emoji Icon</label>
+          <input type="text" id="editCatIcon" placeholder="🛢️" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Image Path or URL</label>
+          <input type="text" id="editCatImage" placeholder="assets/images/gingelly_oil.jpg" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">SAVE CATEGORY CHANGES</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Testimonial Modal -->
+  <div class="modal-overlay" id="adminAddTestimonialModal">
+    <div class="modal-content" style="max-width: 440px;">
+      <button class="modal-close-btn" onclick="closeModal('adminAddTestimonialModal')">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Add Customer Review</h3>
+      <form onsubmit="event.preventDefault(); adminManager.addTestimonial(
+        document.getElementById('tName').value,
+        document.getElementById('tLocation').value,
+        document.getElementById('tRating').value,
+        document.getElementById('tComment').value
+      );">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Customer Name</label>
+          <input type="text" id="tName" required placeholder="Sangeetha M." style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">City / Location</label>
+          <input type="text" id="tLocation" placeholder="Trichy" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);" />
+        </div>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Rating (1 to 5 Stars)</label>
+          <select id="tRating" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            <option value="5">⭐⭐⭐⭐⭐ (5 Stars)</option>
+            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label style="font-size: 0.82rem; font-weight: 600;">Review Comment</label>
+          <textarea id="tComment" required rows="3" placeholder="Write review comment..." style="width: 100%; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: var(--radius-sm);"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">PUBLISH REVIEW</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- App Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
